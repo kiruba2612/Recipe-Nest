@@ -1,0 +1,81 @@
+<%-include("../layouts/boilerplate")%>
+
+<div class="row m-3">
+  <h1 class="text-center">Edit Recipe</h1>
+  <div class="col-6 offset-3">
+    <form
+      action="/recipe/<%=recipe.id%>?_method=PUT"
+      method="POST"
+      class="validated-form"
+    >
+      <div class="mb-3">
+        <label class="form-label" for="name">Dish name</label>
+        <input
+          class="form-control"
+          type="text"
+          id="name"
+          name="recipe[name]"
+          value="<%= recipe.name%>"
+        />
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="cuisine">Cuisine</label>
+        <input
+          class="form-control"
+          type="text"
+          id="cuisine"
+          name="recipe[cuisine]"
+          value="<%= recipe.cuisine%>"
+        />
+
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="image">Image Url</label>
+        <input
+          class="form-control"
+          type="text"
+          id="image"
+          name="recipe[image]"
+          value="<%= recipe.image%>"
+        />
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="ingredients">Ingredients</label>
+        <textarea
+          class="form-control"
+          type="text"
+          id="ingredients"
+          name="recipe[ingredients]"
+          required
+        >
+<%= recipe.ingredients%></textarea
+        >
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="steps">Steps</label>
+        <textarea
+          class="form-control"
+          type="text"
+          id="description"
+          name="recipe[steps]"
+        >
+<%= recipe.steps%>
+</textarea
+        >
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+      <div class="mb-3">
+        <button class="btn btn-success">Update Recipe</button>
+      </div>
+      <div class="mb-3 d-inline">
+        <a href="/recipe" class="btn btn-primary mt-3">Back to Recipes</a>
+      </div>
+    </form>
+  </div>
+</div>
+<%-include('../partials/footer')%>

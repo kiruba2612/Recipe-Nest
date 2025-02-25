@@ -1,0 +1,94 @@
+<%- include('../layouts/boilerplate') %>
+
+<style>
+  .card {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+
+  .card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .card-img-top {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+  }
+
+  .card-body {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .text-muted {
+    font-size: 1.2rem;
+  }
+
+  hr {
+    border-top: 2px solid #ddd;
+  }
+
+  .btn {
+    border-radius: 8px;
+    padding: 10px 15px;
+  }
+
+  .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+
+  .btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+  }
+</style>
+
+<div class="container mt-5">
+  <div class="card shadow-sm">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img
+          src="<%= recipe.image %>"
+          class="img-fluid card-img-top"
+          alt="<%= recipe.name %>"
+        />
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h1 class="card-title"><%= recipe.name %></h1>
+          <h4 class="text-muted">Cuisine: <%= recipe.cuisine %></h4>
+          <hr />
+          <h5>Ingredients:</h5>
+          <p><%= recipe.ingredients %></p>
+          <hr />
+          <h5>Description/Steps:</h5>
+          <p><%= recipe.steps %></p>
+          <div class="mt-3">
+            <a href="/recipe" class="btn btn-primary">Back to Recipes</a>
+            <a href="/edit/<%=recipe.id%>" class="btn btn-warning"
+              >Edit Recipe</a
+            >
+            <form
+              class="d-inline"
+              action="/recipe/<%=recipe.id%>?_method=Delete"
+              method="post"
+            >
+              <button class="btn btn-danger">Delete</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

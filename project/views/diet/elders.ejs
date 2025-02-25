@@ -1,0 +1,56 @@
+<%- include("../layouts/boilerplate") %>
+<style>
+  html,
+  body {
+    height: 100vh;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  td {
+    cursor: pointer; /* Makes the cursor a pointer on hover */
+    transition: all 0.3s ease; /* Smooth transition for all changes */
+    padding: 15px; /* Adjust padding for size */
+  }
+
+  td:hover {
+    background-color: #eeeded; /* Bright yellow color when hovering */
+    transform: scale(1.1); /* Slightly increase the size of the td */
+    z-index: 1; /* Ensure the hovered td appears above others */
+  }
+</style>
+
+<div class="container">
+  <h2 class="text-center mb-4">Weekly Diet & Nutrition Plan for Elders</h2>
+  <table class="table table-bordered table-striped text-center">
+    <thead class="table-dark">
+      <tr>
+        <th>Day</th>
+        <th>Breakfast</th>
+        <th>Lunch</th>
+        <th>Snack</th>
+        <th>Dinner</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (let i = 0; i < data.weekPlan.length; i++) { %>
+      <tr>
+        <td><%= data.weekPlan[i].day %></td>
+        <td><%= data.weekPlan[i].breakfast %></td>
+        <td><%= data.weekPlan[i].lunch %></td>
+        <td><%= data.weekPlan[i].snack %></td>
+        <td><%= data.weekPlan[i].dinner %></td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>

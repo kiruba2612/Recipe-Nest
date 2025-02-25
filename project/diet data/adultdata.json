@@ -1,0 +1,53 @@
+{
+  "weekPlan": [
+    {
+      "day": "Monday",
+      "breakfast": "Masala Dosa with coconut chutney and sambar",
+      "lunch": "Rice with sambar, vegetable kurma, and papadam",
+      "snack": "Sundal (boiled chickpeas with coconut) and fresh coconut water",
+      "dinner": "Chappathi with paneer butter masala"
+    },
+    {
+      "day": "Tuesday",
+      "breakfast": "Pongal with coconut chutney and sambar",
+      "lunch": "Biryani (veg or chicken) with raita and a side salad",
+      "snack": "Banana chips and a glass of buttermilk",
+      "dinner": "Rava Kesari with a side of vegetable curry"
+    },
+    {
+      "day": "Wednesday",
+      "breakfast": "Idli with sambar and coconut chutney",
+      "lunch": "Lemon rice with potato curry and cucumber raita",
+      "snack": "Boiled peanuts and a glass of coconut water",
+      "dinner": "Dosa with vegetable filling and chutney"
+    },
+    {
+      "day": "Thursday",
+      "breakfast": "Vada with sambar and coconut chutney",
+      "lunch": "Curd rice with pickle, papadam, and a side of curry",
+      "snack": "Fruit salad with a sprinkle of black salt and lemon",
+      "dinner": "Chapati with mixed vegetable korma"
+    },
+    {
+      "day": "Friday",
+      "breakfast": "Appam with vegetable stew",
+      "lunch": "Rice with avial and rasam",
+      "snack": "Roasted almonds and a glass of masala chai",
+      "dinner": "Fish curry with rice or chapati"
+    },
+    {
+      "day": "Saturday",
+      "breakfast": "Rava Dosa with coconut chutney and sambar",
+      "lunch": "Kootu with rice and papadam",
+      "snack": "Samosas and fresh lime juice",
+      "dinner": "Vegetable biryani with cucumber raita"
+    },
+    {
+      "day": "Sunday",
+      "breakfast": "Dosa with potato masala filling and sambar",
+      "lunch": "Puliyodarai (tamarind rice) with curd and a side of poriyal",
+      "snack": "Mango slices or papaya slices",
+      "dinner": "Adai with avial"
+    }
+  ]
+}

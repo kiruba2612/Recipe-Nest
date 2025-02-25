@@ -1,0 +1,53 @@
+{
+  "weekPlan": [
+    {
+      "day": "Monday",
+      "breakfast": "Mini Idlis with sambar and coconut chutney",
+      "lunch": "Lemon rice with a side of potato fry and curd",
+      "snack": "Banana and a glass of fresh fruit juice",
+      "dinner": "Dosa with mild potato masala and chutney"
+    },
+    {
+      "day": "Tuesday",
+      "breakfast": "Masala Dosa with a mild chutney",
+      "lunch": "Rice with dal (yellow or tomato) and vegetable poriyal",
+      "snack": "Boiled corn with a pinch of salt and lemon",
+      "dinner": "Chapati with a simple vegetable curry"
+    },
+    {
+      "day": "Wednesday",
+      "breakfast": "Upma with a side of coconut chutney",
+      "lunch": "Curd rice with a small serving of cucumber salad",
+      "snack": "Sundal (boiled chickpeas with coconut) and a glass of buttermilk",
+      "dinner": "Soft idiyappam with vegetable stew"
+    },
+    {
+      "day": "Thursday",
+      "breakfast": "Vada with sambar and mild coconut chutney",
+      "lunch": "Kootu (vegetable stew) with rice",
+      "snack": "Yogurt with honey and a sprinkle of nuts",
+      "dinner": "Chapati with a mild paneer curry"
+    },
+    {
+      "day": "Friday",
+      "breakfast": "Pongal with coconut chutney and sambar",
+      "lunch": "Rice with mixed vegetable curry and a side of papadam",
+      "snack": "Fruit salad with a sprinkle of black salt",
+      "dinner": "Rava Dosa with a small serving of vegetable sambar"
+    },
+    {
+      "day": "Saturday",
+      "breakfast": "Puttu with kadala curry (mild)",
+      "lunch": "Tomato rice with a side of vegetable fry and raita",
+      "snack": "Apple slices with a dollop of peanut butter",
+      "dinner": "Biryani rice with a small portion of chicken or vegetable raita"
+    },
+    {
+      "day": "Sunday",
+      "breakfast": "Dosa with mild chutney and a boiled egg",
+      "lunch": "Curd rice with a side of mixed vegetable poriyal",
+      "snack": "Mango slices or fruit yogurt",
+      "dinner": "Adai (lentil pancake) with a mild vegetable stew"
+    }
+  ]
+}

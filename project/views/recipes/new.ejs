@@ -1,0 +1,129 @@
+<%- include('../layouts/boilerplate') %> <%- include('../partials/navbar') %>
+
+<style>
+  html,
+  body {
+    height: 90vh;
+  }
+
+  .container {
+    max-width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  h1 {
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
+
+  .form-control {
+    border-radius: 6px;
+    padding: 8px;
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+
+  .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+
+  .btn-success:hover {
+    background-color: #218838;
+  }
+
+  .btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+  }
+
+  .btn-info:hover {
+    background-color: #138496;
+  }
+
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .button-group .btn {
+    width: 48%;
+  }
+</style>
+
+<div class="container mt-4">
+  <h1>New Recipe</h1>
+  <form action="/new" method="POST" class="validated-form">
+    <div class="mb-2">
+      <label class="form-label" for="name">Dish Name</label>
+      <input class="form-control" type="text" id="name" name="name" required />
+      <div class="valid-feedback">Looks good!</div>
+    </div>
+    <div class="mb-2">
+      <label class="form-label" for="cuisine">Cuisine</label>
+      <input
+        class="form-control"
+        type="text"
+        id="cuisine"
+        name="cuisine"
+        required
+      />
+      <div class="valid-feedback">Looks good!</div>
+    </div>
+    <div class="mb-2">
+      <label class="form-label" for="image">Image URL</label>
+      <input
+        class="form-control"
+        type="text"
+        id="image"
+        name="image"
+        required
+      />
+      <div class="valid-feedback">Looks good!</div>
+    </div>
+    <div class="mb-2">
+      <label class="form-label" for="ingredients">Ingredients</label>
+      <textarea
+        class="form-control"
+        id="ingredients"
+        name="ingredients"
+        required
+      ></textarea>
+      <div class="valid-feedback">Looks good!</div>
+    </div>
+    <div class="mb-2">
+      <label class="form-label" for="steps">Steps</label>
+      <textarea
+        class="form-control"
+        id="description"
+        name="steps"
+        required
+      ></textarea>
+      <div class="valid-feedback">Looks good!</div>
+    </div>
+    <div class="mb-2">
+      <button class="btn btn-success">Add Recipe</button>
+    </div>
+  </form>
+  <div class="button-group mt-2">
+    <a href="/recipe" class="btn btn-info">All Recipes</a>
+    <a href="/" class="btn btn-secondary">Home</a>
+  </div>
+</div>
+
+<!-- <%- include('../partials/footer') %> -->

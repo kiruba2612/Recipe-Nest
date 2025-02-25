@@ -1,0 +1,379 @@
+<%-include("../layouts/boilerplate") %> <%-include("../partials/navbar") %>
+<style>
+  .nav-recipe {
+    background: url("path-to-your-image.jpg") no-repeat center center;
+    background-size: cover;
+    color: white;
+  }
+  .logo {
+    max-width: 50px;
+  }
+  .card-img-top {
+    max-height: 400px;
+    object-fit: cover;
+  }
+</style>
+<header
+  class="bg-dark text-white text-center py-5"
+  style="
+    background: url('your-image.jpg') center/cover no-repeat;
+    height: 100vh;
+  "
+>
+  <div class="container">
+    <h1>Welcome to Recipe Nest</h1>
+    <p class="lead">Discover, Cook, and Share Your Favorite Recipes</p>
+    <a href="/recipe" class="btn btn-secondary btn-lg">Browse Recipes</a>
+  </div>
+</header>
+
+<main class="container my-5">
+  <!-- carousal begin -->
+
+  <!-- carousal end -->
+  <section class="my-5">
+    <h2 class="text-center">Dish of the Day</h2>
+    <div class="card mx-auto" style="max-width: 600px">
+      <img
+        src="<%= recipe.image %>"
+        class="card-img-top"
+        alt="Dish of the Day"
+      />
+      <div class="card-body text-center">
+        <h5 class="card-title"><%= recipe.name%></h5>
+        <p class="card-text">Discover the flavors and try it out today!</p>
+        <a href="/dish-of-the-day" class="btn btn-primary">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="my-5">
+    <h2 class="text-center">Diet & Nutrition Planner Section</h2>
+    <p class="text-center mb-5">
+      Find recipes tailored for elders, adults, and kids.
+    </p>
+
+    <div class="row text-center">
+      <div class="col-md-4 card">
+        <img
+          src="https://files.oaiusercontent.com/file-WFM5y2NCsD5x8JsRRvGjUC?se=2025-01-20T06%3A33%3A34Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D75da5d1c-5737-4fc5-a23f-84bffd23a316.webp&sig=cPyC0dM%2BjKAF43I3HRPqB5VUCMCYXlgxfOQZ0VTZmVI%3D"
+          alt="Elders"
+          class="m-2"
+          style="max-width: 100px"
+        />
+        <h5>Elders</h5>
+        <p>Recipes designed for elder health and wellness.</p>
+        <a href="/diet/elder" class="btn btn-primary mb-3"
+          >View Diet & Nutritional Plans</a
+        >
+      </div>
+      <div class="col-md-4 card">
+        <img
+          src="https://files.oaiusercontent.com/file-DELaHtte6Z8KYPiHvsQ2pP?se=2025-01-20T06%3A33%3A34Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D4336a0f9-7b7f-4607-9dc2-c31848784a87.webp&sig=1GHvdPBue1362dpst7ZBRhL2rHxG6g8Uxr88vPnACuc%3D"
+          alt="Adults"
+          class="m-2"
+          style="max-width: 100px"
+        />
+        <h5>Adults</h5>
+        <p>Healthy and balanced meals for adults on the go.</p>
+        <a href="/diet/adult" class="btn btn-primary"
+          >View Diet & Nutritional Plans</a
+        >
+      </div>
+      <div class="col-md-4 card">
+        <img
+          src="https://files.oaiusercontent.com/file-SZWna5PhdnY19nrBfaf2mv?se=2025-01-20T06%3A35%3A44Z&sp=r&sv=2024-08-04&sr=brscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D5925ab29-a22b-43d9-9242-5749d9666345.webpsig=0gT45OjqDmupS3LkLkyAN0xJKKh3JiiNaL2/wLg%2BPGE%3D"
+          alt="Adults"
+          class="m-2"
+          style="max-width: 100px"
+        />
+
+        <h5>Kids</h5>
+        <p>Fun and delicious recipes for the little ones.</p>
+        <a href="/diet/kid" class="btn btn-primary"
+          >View Diet & Nutritional Plans
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- steps -->
+  <style>
+    .card-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f8f9fa;
+    }
+    .scrollable-card {
+      max-height: 400px;
+      overflow-y: auto;
+    }
+  </style>
+  <section class="card-container">
+    <div class="card" style="width: 75rem">
+      <div class="card-body">
+        <h5 class="card-title text-center">Top 30 Cooking Tips</h5>
+        <div class="scrollable-card">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <strong>1.</strong> Always taste as you cook to adjust seasoning.
+              <br />
+              <em>Reason:</em> Ensures flavors are balanced throughout the
+              cooking process.
+            </li>
+            <li class="list-group-item">
+              <strong>2.</strong> Keep your knives sharp for easier and safer
+              cutting. <br />
+              <em>Reason:</em> Sharp knives require less force, reducing the
+              risk of accidents.
+            </li>
+            <li class="list-group-item">
+              <strong>3.</strong> Preheat your pans before adding ingredients.
+              <br />
+              <em>Reason:</em> Preheating ensures even cooking and prevents
+              sticking.
+            </li>
+            <li class="list-group-item">
+              <strong>4.</strong> Read the recipe completely before starting.
+              <br />
+              <em>Reason:</em> Helps you prepare and avoid missing steps or
+              ingredients.
+            </li>
+            <li class="list-group-item">
+              <strong>5.</strong> Use fresh herbs to elevate flavors. <br />
+              <em>Reason:</em> Fresh herbs provide more vibrant and aromatic
+              flavors.
+            </li>
+            <li class="list-group-item">
+              <strong>6.</strong> Don't overcrowd the pan; it affects cooking
+              evenly. <br />
+              <em>Reason:</em> Overcrowding lowers the pan's temperature,
+              leading to steaming instead of searing.
+            </li>
+            <li class="list-group-item">
+              <strong>7.</strong> Let meat rest after cooking to retain juices.
+              <br />
+              <em>Reason:</em> Resting allows juices to redistribute, keeping
+              the meat tender.
+            </li>
+            <li class="list-group-item">
+              <strong>8.</strong> Use a kitchen scale for precise measurements.
+              <br />
+              <em>Reason:</em> Improves consistency and accuracy, especially in
+              baking.
+            </li>
+            <li class="list-group-item">
+              <strong>9.</strong> Save vegetable scraps to make homemade stock.
+              <br />
+              <em>Reason:</em> Reduces waste and creates a flavorful base for
+              soups and sauces.
+            </li>
+            <li class="list-group-item">
+              <strong>10.</strong> Clean as you go to stay organized. <br />
+              <em>Reason:</em> Maintains a tidy workspace and reduces
+              post-cooking cleanup.
+            </li>
+            <li class="list-group-item">
+              <strong>11.</strong> Put a bowl of water inside your oven when
+              baking to get crispy bread crust. <br />
+              <em>Reason:</em> The steam helps create a crusty texture by
+              hydrating the dough surface.
+            </li>
+            <li class="list-group-item">
+              <strong>12.</strong> Fry your onions with salt. <br />
+              <em>Reason:</em> Salt draws out moisture, helping onions
+              caramelize faster.
+            </li>
+            <li class="list-group-item">
+              <strong>13.</strong> Don't cook meat straight from the freezer.
+              Allow it to reach room temperature first. <br />
+              <em>Reason:</em> Ensures even cooking and prevents overcooking the
+              outer layers.
+            </li>
+            <li class="list-group-item">
+              <strong>14.</strong> Brining is key to getting delicious, juicy
+              meat. <br />
+              <em>Reason:</em> Brining infuses meat with moisture and flavor
+              before cooking.
+            </li>
+            <li class="list-group-item">
+              <strong>15.</strong> Add salt continuously while you cook to avoid
+              over-salting. <br />
+              <em>Reason:</em> Layering salt enhances flavor without
+              overpowering.
+            </li>
+            <li class="list-group-item">
+              <strong>16.</strong> Use sugar as a seasoning. <br />
+              <em>Reason:</em> Balances acidity and bitterness in savory dishes.
+            </li>
+            <li class="list-group-item">
+              <strong>17.</strong> A little bit of olive oil can add a flavorful
+              kick to your dishes. <br />
+              <em>Reason:</em> High-quality olive oil enhances the taste of your
+              food.
+            </li>
+            <li class="list-group-item">
+              <strong>18.</strong> Don't overcrowd your pan when searing. <br />
+              <em>Reason:</em> Allows for proper browning and caramelization.
+            </li>
+            <li class="list-group-item">
+              <strong>19.</strong> Cook your pasta in the sauce at the last
+              minute. <br />
+              <em>Reason:</em> Infuses pasta with sauce flavor and ensures a
+              cohesive dish.
+            </li>
+            <li class="list-group-item">
+              <strong>20.</strong> Skip nonstick pans to get a crispy crust.
+              <br />
+              <em>Reason:</em> Stainless steel or cast iron pans provide better
+              searing.
+            </li>
+            <li class="list-group-item">
+              <strong>21.</strong> Onions are one of the things you add to a pan
+              when cooking. <br />
+              <em>Reason:</em> Onions form the aromatic base for many dishes.
+            </li>
+            <li class="list-group-item">
+              <strong>22.</strong> Know when to add your herbs. <br />
+              <em>Reason:</em> Add hardy herbs early and delicate herbs toward
+              the end for the best flavor.
+            </li>
+            <li class="list-group-item">
+              <strong>23.</strong> Toast your spices before using them. <br />
+              <em>Reason:</em> Toasting enhances their aroma and flavor.
+            </li>
+            <li class="list-group-item">
+              <strong>24.</strong> Rest dough before baking. <br />
+              <em>Reason:</em> Allows gluten to relax and results in better
+              texture.
+            </li>
+            <li class="list-group-item">
+              <strong>25.</strong> Always use room temperature ingredients for
+              baking. <br />
+              <em>Reason:</em> Ensures smoother mixing and even baking.
+            </li>
+            <li class="list-group-item">
+              <strong>26.</strong> Don't flip food too often when grilling.
+              <br />
+              <em>Reason:</em> Allows for proper browning and grill marks.
+            </li>
+            <li class="list-group-item">
+              <strong>27.</strong> Use a thermometer to check meat doneness.
+              <br />
+              <em>Reason:</em> Ensures meat is cooked to the correct temperature
+              for safety and flavor.
+            </li>
+            <li class="list-group-item">
+              <strong>28.</strong> Chill your mixing bowl when making whipped
+              cream. <br />
+              <em>Reason:</em> Helps the cream whip faster and stay stable.
+            </li>
+            <li class="list-group-item">
+              <strong>29.</strong> Always dry your ingredients before frying.
+              <br />
+              <em>Reason:</em> Prevents splattering and ensures crispiness.
+            </li>
+            <li class="list-group-item">
+              <strong>30.</strong> Add acid (like vinegar or lemon juice) to
+              balance flavors. <br />
+              <em>Reason:</em> Brightens dishes and balances rich or heavy
+              flavors.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end -->
+
+  <section class="my-5">
+    <h2 class="text-center">User Favorites</h2>
+    <p class="text-center mb-5">
+      Check out the top-rated recipes by our community.
+    </p>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100">
+          <img
+            src="https://www.thespruceeats.com/thmb/IyxiJdbwFaixy4iolNYTLjBmW_w=/4288x2848/filters:fill(auto,1)/kimbap-korean-sushi-rolls-2118795-Hero-5b7dbdd346e0fb00250718b8.jpg"
+            class="card-img-top"
+            alt="User Favorite 1"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Sushi Rolls</h5>
+            <h6 class="card-title">Rating:</h6>
+            <h6 class="card-title">⭐⭐⭐⭐ (4.2)</h6>
+            <h6 class="card-title">Ingredients:</h6>
+            <p class="card-text">
+              sushi rice,nori sheets,cucumber,avocado,crab sticks,soy
+              sauce,wasabi,rice vinegar,sugar,salt
+            </p>
+            <h6 class="card-title">Recipes:</h6>
+            <p class="card-text">
+              Cook sushi rice and season with rice vinegar, sugar, and salt.,Lay
+              a nori sheet on a bamboo mat.,Spread a thin layer of sushi rice on
+              the nori.,Place cucumber, avocado, and crab sticks along the
+              rice., Roll the sushi tightly using the bamboo mat.,Slice the roll
+              into pieces and serve with soy sauce and wasabi.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img
+            src="https://th.bing.com/th/id/OIP.g_EYshV4TBrKFonMmN2KEgHaE7?rs=1&pid=ImgDetMain"
+            class="card-img-top"
+            alt="User Favorite 2"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Burger</h5>
+            <h6 class="card-title">Rating:</h6>
+            <h6 class="card-title">⭐⭐⭐⭐ (4.6)</h6>
+            <h6 class="card-title">Ingredients:</h6>
+            <p class="card-text">
+              ground beef,buns,lettuce,tomatoes,cheese,onions,pickles
+            </p>
+            <h6 class="card-title">Recipe:</h6>
+            <p class="card-text">
+              Shape ground beef into patties.,Grill or pan-fry patties until
+              cooked to desired doneness.,Toast burger buns lightly on the grill
+              or pan.,Assemble burgers with lettuce, tomatoes, cheese, and
+              pickles.,Serve with ketchup, mustard, or other sauces.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img
+            src="https://th.bing.com/th/id/OIP.rqwxv2CGyDPPUNWqP_OKUwHaE8?rs=1&pid=ImgDetMain"
+            class="card-img-top"
+            alt="User Favorite 3"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Moussaka</h5>
+            <h6 class="card-title">Rating:</h6>
+            <h6 class="card-title">⭐⭐⭐⭐⭐ (4.9)</h6>
+            <h6 class="card-title">Ingredients:</h6>
+            <p class="card-text">
+              eggplant,minced meat,onions,tomato sauce,bechamel
+              sauce,cheese,olive oil
+            </p>
+            <h6 class="card-title">Recipe:</h6>
+            <p class="card-text">
+              Slice and roast eggplant until tender.,Cook minced meat with
+              onions and tomato sauce.,Layer eggplant and meat mixture in a
+              baking dish.,Top with bechamel sauce and cheese.,Bake until golden
+              and bubbly.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%-include('../partials/footer') %>

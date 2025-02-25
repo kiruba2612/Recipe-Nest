@@ -1,0 +1,193 @@
+<%-include('../layouts/boilerplate')%> <%-include('../partials/navbar')%>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px;
+  }
+
+  h1 {
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 25px;
+  }
+
+  .search-bar {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    margin-bottom: 25px;
+    position: relative;
+  }
+
+  .search-bar input {
+    width: 100%;
+    padding: 14px 22px;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .search-bar input:focus {
+    border-color: #007bff;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+    transform: scale(1.03);
+  }
+
+  .card {
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    outline: none;
+  }
+
+  .card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  .card:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .card-img-top {
+    object-fit: cover;
+    height: 230px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+
+  .card-body {
+    text-align: center;
+    padding: 22px;
+    background: #f9f9f9;
+  }
+
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    width: 100%;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+
+  .recipe-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  }
+
+  .recipe-card.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .no-results {
+    display: none;
+    text-align: center;
+    padding: 25px;
+    border-radius: 15px;
+    background-color: #f8f9fa;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #555;
+    margin-top: 20px;
+  }
+</style>
+
+<div class="container mt-5">
+  <h1>All Recipes</h1>
+  <div class="search-bar">
+    <input
+      type="text"
+      id="search"
+      placeholder="Search recipes..."
+      onkeyup="searchRecipes()"
+      onkeydown="navigateResults(event)"
+    />
+  </div>
+  <div class="text-center mb-4">
+    <a href="/new" class="btn btn-success">Add Recipe</a>
+  </div>
+
+  <h1 class="mb-4">Recipe Showcase</h1>
+  <div id="recipeContainer" class="row row-cols-1 row-cols-md-3 g-4">
+    <% for (let i = 0; i < recipes.length; i++) { %>
+    <div class="col recipe-card show">
+      <div class="card h-100 shadow-sm" tabindex="0">
+        <img
+          src="<%= recipes[i].image %>"
+          class="card-img-top"
+          alt="<%= recipes[i].name %>"
+        />
+        <div class="card-body">
+          <h5 class="card-title"><%= recipes[i].name %></h5>
+          <p class="card-text text-muted">Cuisine: <%= recipes[i].cuisine %></p>
+          <a href="/show/<%= recipes[i].id %>" class="btn btn-primary"
+            >View Recipe</a
+          >
+        </div>
+      </div>
+    </div>
+    <% } %>
+  </div>
+
+  <div id="noResults" class="no-results">
+    Sorry, the recipe is not available. We will add it soon!
+  </div>
+</div>
+
+<script>
+  let searchIndex = -1;
+  function searchRecipes() {
+    let input = document.getElementById("search").value.toLowerCase();
+    let cards = document.getElementsByClassName("recipe-card");
+    let found = false;
+    searchIndex = -1;
+
+    for (let i = 0; i < cards.length; i++) {
+      let title = cards[i]
+        .querySelector(".card-title")
+        .textContent.toLowerCase();
+      if (title.includes(input)) {
+        cards[i].classList.add("show");
+        cards[i].style.display = "block";
+        found = true;
+      } else {
+        cards[i].classList.remove("show");
+        cards[i].style.display = "none";
+      }
+    }
+    document.getElementById("noResults").style.display = found
+      ? "none"
+      : "block";
+  }
+
+  function navigateResults(event) {
+    let cards = document.querySelectorAll(".recipe-card.show .card");
+    if (event.key === "ArrowDown") {
+      searchIndex = (searchIndex + 1) % cards.length;
+    } else if (event.key === "ArrowUp") {
+      searchIndex = (searchIndex - 1 + cards.length) % cards.length;
+    }
+    if (cards.length > 0 && searchIndex >= 0) {
+      cards[searchIndex].focus();
+      cards[searchIndex].scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+  }
+</script>
+
+<%-include('../partials/footer')%>
